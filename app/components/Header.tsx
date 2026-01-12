@@ -2,9 +2,9 @@
 
 function Header() {
     return (
-        <div className='w-screen border-b border-[#ffffff]/20'>
+        <div className='w-screen border-b border-[#ffffff]/20 bg-linear-to-br from-[#ffffff]/5 to-transparent backdrop-blur-sm fixed z-50'>
             {/* Logo */}
-            <div className='flex items-center justify-between px-8 py-5 md:py-8'>
+            <div className='flex items-center justify-between px-[5%] py-5 md:py-8'>
                 <button className='font-funnel-display text-xl font-semibold cursor-pointer'>
                     {`Qzseeker`}
                 </button>
