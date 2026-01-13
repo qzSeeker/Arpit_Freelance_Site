@@ -115,7 +115,7 @@ const Contact: React.FC = () => {
             </div>
 
             {/* CTA Section */}
-            <div className='mb-10 font-funnel-display border border-[#ededed]/20 rounded-xl p-6 bg-linear-to-br from-[#ededed]/5 to-transparent backdrop-blur-sm hover:border-[#ededed]/40 transition-colors duration-300'>
+            <div className='mb-10 font-funnel-display border border-[#0d0d0d]/20 dark:border-[#ededed]/20 rounded-xl p-6 bg-linear-to-br from-[#0d0d0d]/10 dark:from-[#ededed]/5 to-transparent backdrop-blur-sm hover:border-[#ededed]/40 transition-colors duration-300'>
             <h2 className='text-2xl md:text-3xl font-bold text-[#0d0d0d] dark:text-[#ededed] mb-4'>
                 Ready to collaborate?
             </h2>
@@ -125,7 +125,7 @@ const Contact: React.FC = () => {
             
             <a
                 href='mailto:your.email@example.com'
-                className='inline-flex items-center gap-2 px-6 py-3 border-x border-[#0d0d0d]/20 dark:border-[#ededed]/20 text-[#0d0d0d] dark:text-[#ededed] rounded-full hover:opacity-80 transition-opacity text-base font-medium'
+                className='inline-flex items-center gap-3 px-5 py-3 border dark:border-[#ededed]/20 border-[#0d0d0d]/20 rounded-xl p-6 bg-linear-to-br dark:from-[#ededed]/5 from-[#0d0d0d]/10 to-transparent backdrop-blur-sm hover:border-[#ededed]/40 transition-colors duration-300'
             >
                 <Mail size={20} />
                 Get in Touch
