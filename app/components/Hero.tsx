@@ -5,17 +5,17 @@ function Hero() {
     return (
         <div className='w-full max-w-[90%] mx-auto flex flex-col gap-6 relative top-16 py-12 px-4'>
             <div className='flex flex-col md:gap-5'>
-                <h1 className="text-[110px] md:text-[190px] max-w-3xl font-md flex flex-col leading-30 md:leading-50 tracking-tight font-funnel-display text-black dark:text-zinc-50">
+                <h1 className="text-[110px] md:text-[190px] max-w-3xl font-md flex flex-col leading-30 md:leading-50 tracking-tight font-funnel-display text-black dark:text-[#ededed]">
                     {`Arpit Yadav.`}
                 </h1>
 
-                <h1 className='font-funnel-display text-lg md:text-xl tracking-tight text-[#0d0d0d] dark:text-[#ffffff]/80'>
+                <h1 className='font-funnel-display text-lg md:text-xl tracking-tight text-[#0d0d0d] dark:text-[#ededed]/80'>
                     {`SDE ► Building AI-powered web applications`}
                 </h1>
             </div>
 
             <div className='flex flex-col md:flex-row text-md md:text-xl gap-4 font-funnel-display mt-6 relative'>
-                <button className='hover:bg-linear-to-br from-[#ffffff]/5 to-transparent absolute rounded-xl transition cursor-pointer border border-[#ffffff]/20 px-10 py-4'>
+                <button className='hover:bg-linear-to-br from-[#ffffff]/5 to-transparent absolute rounded-xl transition cursor-pointer border border-[#0d0d0d]/20 dark:border-[#ededed]/20 px-10 py-4'>
                     {`View My Work`}
                 </button>
                 {/* Floating Stats */}

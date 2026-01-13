@@ -24,7 +24,7 @@ function Card({ stat, label, delay = 0, floatIntensity = 'medium' }: { stat: str
         }}
         >
         <motion.div
-            className='border border-[#ffffff]/20 rounded-xl p-6 bg-linear-to-br from-[#ffffff]/5 to-transparent backdrop-blur-sm hover:border-[#ffffff]/40 transition-colors duration-300'
+            className='border border-[#0d0d0d]/20 dark:border-[#ffffff]/20 rounded-xl p-6 bg-linear-to-br dark:from-[#ffffff]/5 from-[#0d0d0d]/10 to-transparent backdrop-blur-sm hover:border-[#ffffff]/40 transition-colors duration-300'
             animate={{
             x: [0, intensity.x, -intensity.x, 0],
             y: [0, -intensity.y, intensity.y, 0],
@@ -41,10 +41,10 @@ function Card({ stat, label, delay = 0, floatIntensity = 'medium' }: { stat: str
             borderColor: "rgba(255, 255, 255, 0.6)",
             }}
         >
-            <h2 className='text-5xl font-bold mb-2 bg-linear-to-r from-white to-gray-300 bg-clip-text text-transparent'>
+            <h2 className='text-5xl font-bold mb-2 bg-linear-to-br from-[#0d0d0d] to-[#0d0d0d]/50 dark:from-white dark:to-gray-300  bg-clip-text text-transparent'>
             {stat}
             </h2>
-            <p className='text-[#ffffff]/70 text-sm'>{label}</p>
+            <p className='text-[#0d0d0d]/70 dark:text-[#ededed]/70 text-sm'>{label}</p>
         </motion.div>
         </motion.div>
     );

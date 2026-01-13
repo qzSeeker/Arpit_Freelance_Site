@@ -51,10 +51,10 @@ const Skills: React.FC = () => {
             transition={{ duration: 0.6 }}
             className='flex flex-col md:gap-5'
         >
-            <h1 className="text-[30px] md:text-[50px] max-w-3xl font-medium leading-tight tracking-tight font-funnel-display text-black dark:text-zinc-50">
+            <h1 className="text-[30px] md:text-[50px] max-w-3xl font-medium leading-tight tracking-tight font-funnel-display text-[#0d0d0d] dark:text-[#ededed]">
             Skills.
             </h1>
-            <p className='text-lg md:text-xl text-white/80 max-w-2xl'>
+            <p className='text-lg md:text-xl dark:text-[#ededed]/70 text-[#0d0d0d]/70 max-w-2xl'>
             Technologies I work with.
             </p>
         </motion.div>
@@ -68,7 +68,7 @@ const Skills: React.FC = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className='text-2xl md:text-3xl font-bold text-black dark:text-white font-funnel-display'
+                className='text-2xl md:text-3xl font-bold text-[#0d0d0d] dark:text-[#ededed] font-funnel-display'
                 >
                 {category}
                 </motion.h2>
@@ -82,7 +82,7 @@ const Skills: React.FC = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.3, delay: index * 0.05 }}
                     whileHover={{ scale: 1.05, y: -5 }}
-                    className='flex flex-col items-center justify-center gap-3 p-6 border border-[#ffffff]/20 rounded-xl bg-linear-to-br from-[#ffffff]/5 to-transparent backdrop-blur-sm hover:border-[#ffffff]/40 transition-colors duration-300'
+                    className='flex flex-col items-center justify-center gap-3 p-6 border border-[#0d0d0d]/20 dark:border-[#ededed]/20 rounded-xl bg-linear-to-br dark:from-[#ededed]/5 from-[#0d0d0d]/10 to-transparent backdrop-blur-sm backdrop-blur-sm hover:border-[#ededed]/40 transition-colors duration-300'
                     >
                     <Image 
                         src={skill.icon} 

@@ -38,23 +38,23 @@ const Contact: React.FC = () => {
         }
     ];
 
-const opportunities: OpportunityCard[] = [
-    {
-        title: 'Full-Time Jobs',
-        icon: <Briefcase size={24} />,
-        description: 'Looking for full-stack or AI engineering roles'
-    },
-    {
-        title: 'Internships',
-        icon: <Code size={24} />,
-        description: 'Open to frontend, backend, or AI internships'
-    },
-    {
-        title: 'Freelance Projects',
-        icon: <Rocket size={24} />,
-        description: 'Available for web dev & AI integration projects'
-    }
-];
+    const opportunities: OpportunityCard[] = [
+        {
+            title: 'Full-Time Jobs',
+            icon: <Briefcase size={24} />,
+            description: 'Looking for full-stack or AI engineering roles'
+        },
+        {
+            title: 'Internships',
+            icon: <Code size={24} />,
+            description: 'Open to frontend, backend, or AI internships'
+        },
+        {
+            title: 'Freelance Projects',
+            icon: <Rocket size={24} />,
+            description: 'Available for web dev & AI integration projects'
+        }
+    ];
 
     return (
         <div className='w-full max-w-[90%] mx-auto flex flex-col gap-12 relative top-16 py-12 px-4 min-h-screen items-center justify-center'>
@@ -66,11 +66,11 @@ const opportunities: OpportunityCard[] = [
             className='flex flex-col items-center text-center max-w-4xl w-full'
         >
             {/* Header */}
-            <h1 className="text-[50px] md:text-[90px] font-medium leading-tight tracking-tight font-funnel-display mb-6">
+            <h1 className="text-[50px] md:text-[90px] text-[#0d0d0d] dark:text-[#ededed] font-medium leading-tight tracking-tight font-funnel-display mb-6">
             {`Let's Work Together.`}
             </h1>
             
-            <p className='text-lg md:text-xl text-white/80 font-funnel-display mb-4 max-w-2xl'>
+            <p className='text-lg md:text-xl text-[#0d0d0d]/70 dark:text-[#ededed]/70 font-funnel-display mb-4 max-w-2xl'>
             Full-stack developer specializing in AI-powered applications. Currently seeking opportunities to build impactful products.
             </p>
 
@@ -97,16 +97,16 @@ const opportunities: OpportunityCard[] = [
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`border border-[#ffffff]/20 rounded-xl p-6 bg-linear-to-br from-[#ffffff]/5 to-transparent backdrop-blur-sm hover:border-[#ffffff]/40 transition-colors duration-300`}
+                className={`border dark:border-[#ededed]/20 border-[#0d0d0d]/20 rounded-xl p-6 bg-linear-to-br dark:from-[#ededed]/5 from-[#0d0d0d]/10 to-transparent backdrop-blur-sm hover:border-[#ededed]/40 transition-colors duration-300`}
                 >
                 <div className='flex flex-col items-center text-center gap-3'>
-                    <div className='text-zinc-700 dark:text-zinc-300'>
+                    <div className='text-[#0d0d0d]/80 dark:text-[#ededed]/80'>
                     {opp.icon}
                     </div>
-                    <h3 className='text-lg font-semibold text-[#0d0d0d] dark:text-white'>
+                    <h3 className='text-lg font-semibold text-[#0d0d0d] dark:text-[#ededed]'>
                     {opp.title}
                     </h3>
-                    <p className='text-sm text-white/20 dark:text-white/80'>
+                    <p className='text-sm text-[#0d0d0d]/60 dark:text-[#ededed]/60'>
                     {opp.description}
                     </p>
                 </div>
@@ -115,17 +115,17 @@ const opportunities: OpportunityCard[] = [
             </div>
 
             {/* CTA Section */}
-            <div className='mb-10 font-funnel-display border border-[#ffffff]/20 rounded-xl p-6 bg-linear-to-br from-[#ffffff]/5 to-transparent backdrop-blur-sm hover:border-[#ffffff]/40 transition-colors duration-300'>
-            <h2 className='text-2xl md:text-3xl font-bold text-[#0d0d0d] dark:text-white mb-4'>
+            <div className='mb-10 font-funnel-display border border-[#ededed]/20 rounded-xl p-6 bg-linear-to-br from-[#ededed]/5 to-transparent backdrop-blur-sm hover:border-[#ededed]/40 transition-colors duration-300'>
+            <h2 className='text-2xl md:text-3xl font-bold text-[#0d0d0d] dark:text-[#ededed] mb-4'>
                 Ready to collaborate?
             </h2>
-            <p className='text-white/80 mb-6'>
+            <p className='text-[#0d0d0d]/70 dark:text-[#ededed]/70 mb-6'>
                 {`Drop me a message and let's discuss how we can work together on your next project.`}
             </p>
             
             <a
                 href='mailto:your.email@example.com'
-                className='inline-flex items-center gap-2 px-6 py-3 border-x border-white/80 text-[#0d0d0d] dark:text-[#ffffff] rounded-full hover:opacity-80 transition-opacity text-base font-medium'
+                className='inline-flex items-center gap-2 px-6 py-3 border-x border-[#0d0d0d]/20 dark:border-[#ededed]/20 text-[#0d0d0d] dark:text-[#ededed] rounded-full hover:opacity-80 transition-opacity text-base font-medium'
             >
                 <Mail size={20} />
                 Get in Touch
@@ -145,12 +145,12 @@ const opportunities: OpportunityCard[] = [
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
                 whileHover={{ scale: 1.05 }}
-                className='flex items-center gap-3 px-5 py-3 border border-[#ffffff]/20 rounded-xl p-6 bg-linear-to-br from-[#ffffff]/5 to-transparent backdrop-blur-sm hover:border-[#ffffff]/40 transition-colors duration-300'
+                className='flex items-center gap-3 px-5 py-3 border dark:border-[#ededed]/20 border-[#0d0d0d]/20 rounded-xl p-6 bg-linear-to-br dark:from-[#ededed]/5 from-[#0d0d0d]/10 to-transparent backdrop-blur-sm hover:border-[#ededed]/40 transition-colors duration-300'
                 >
-                <div className='text-zinc-700 dark:text-zinc-300'>
+                <div className='text-[#0d0d0d]/80 dark:text-[#ededed]/80'>
                     {link.icon}
                 </div>
-                <span className='text-sm font-medium text-[#0d0d0d] dark:text-white'>
+                <span className='text-sm font-medium text-[#0d0d0d] dark:text-[#ededed]'>
                     {link.label}
                 </span>
                 </motion.a>
@@ -163,7 +163,7 @@ const opportunities: OpportunityCard[] = [
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className='text-sm text-zinc-500 dark:text-[#ffffff]/60 font-funnel-display  mt-8'
+            className='text-sm text-[#0d0d0d]/60 dark:text-[#ededed]/60 font-funnel-display  mt-8'
             >
             Based in New Delhi, India • Open to remote & hybrid opportunities
             </motion.p>

@@ -26,7 +26,7 @@ const projects: Project[] = [
     stats: ['1000+ students', 'Full-stack', 'Founder'],
     tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'AI'],
     links: {
-    caseStudy: '#'
+    // caseStudy: '#'
     }
 },
     {
@@ -37,7 +37,7 @@ const projects: Project[] = [
     stats: ['500+ daily queries', '95% accuracy', '35% faster APIs'],
     tech: ['Next.js', 'Express.js', 'OpenAI', 'ChatGPT', 'Vapi.ai'],
     links: {
-    caseStudy: '#'
+    // caseStudy: '#'
     }
 },
 ];
@@ -52,10 +52,10 @@ return (
     transition={{ duration: 0.6 }}
     className='flex flex-col md:gap-5'
     >
-    <h1 className="text-[30px] md:text-[50px] max-w-3xl font-medium flex flex-col leading-tight tracking-tight font-funnel-display text-black dark:text-zinc-50">
+    <h1 className="text-[30px] md:text-[50px] max-w-3xl font-medium flex flex-col leading-tight tracking-tight font-funnel-display text-[#0d0d0d] dark:text-[#ededed]">
         Experience.
     </h1>
-    <p className='text-lg md:text-xl text-white/80 max-w-2xl font-funnel-display'>
+    <p className='text-lg md:text-xl text-[#0d0d0d]/70 dark:text-[#ededed]/70 max-w-2xl font-funnel-display'>
         A showcase of my professional work and projects.
     </p>
     </motion.div>

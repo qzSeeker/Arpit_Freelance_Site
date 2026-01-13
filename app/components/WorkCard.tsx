@@ -30,22 +30,22 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: index * 0.1 }}
-        className='group relative font-funnel-display border border-[#ffffff]/20 rounded-xl p-6 bg-linear-to-br from-[#ffffff]/5 to-transparent backdrop-blur-sm hover:border-[#ffffff]/40 transition-colors duration-300'
+        className='group relative font-funnel-display border border-[#0d0d0d]/20 dark:border-[#ffffff]/20 rounded-xl p-6 bg-linear-to-br dark:from-[#ededed]/5 from-[#0d0d0d]/10 to-transparent backdrop-blur-sm hover:border-[#ffffff]/40 transition-colors duration-300'
         >
         {/* Header */}
         <div className='flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4'>
             <div>
-            <h3 className='text-2xl md:text-3xl font-bold text-black dark:text-white'>
+            <h3 className='text-2xl md:text-3xl font-bold text-[#0d0d0d] dark:text-[#ededed]'>
                 {project.title}
             </h3>
-            <p className='text-sm text-white/60 mt-1'>
+            <p className='text-sm text-[#0d0d0d]/60 dark:text-[#ededed]/60 mt-1'>
                 {project.role} • {project.period}
             </p>
             </div>
         </div>
 
         {/* Description */}
-        <p className='text-zinc-700 dark:text-zinc-300 mb-4 leading-relaxed'>
+        <p className='text-[#0d0d0d]/70 dark:text-[#ededed]/70 mb-4 leading-relaxed'>
             {project.description}
         </p>
 
@@ -54,7 +54,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
             {project.stats.map((stat, i) => (
             <span
                 key={i}
-                className='px-3 py-1 text-sm bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 rounded-full border border-zinc-200 dark:border-zinc-700'
+                className='px-3 py-1 text-sm bg-[#ededed]/20 dark:bg-[#0d0d0d]/20 text-[#0d0d0d] dark:text-[#ededed]/70 rounded-full border border-[#0d0d0d]/20 dark:border-[#ededed]/20'
             >
                 {stat}
             </span>
@@ -66,7 +66,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
             {project.tech.map((tech, i) => (
             <span
                 key={i}
-                className='px-3 py-1 text-xs font-medium bg-zinc-800 dark:bg-zinc-700 text-white rounded-md'
+                className='px-3 py-1 text-xs font-medium border border-[#0d0d0d]/20 dark:border-[#ededed]/20 bg-[#0d0d0d]/10 dark:bg-[#0d0d0d]/20 text-[#0d0d0d] dark:text-[#ededed]/70 rounded-md'
             >
                 {tech}
             </span>
@@ -80,7 +80,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                 href={project.links.live}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='inline-flex items-center gap-2 px-4 py-2 bg-black dark:bg-white text-white dark:text-black rounded-lg hover:opacity-80 transition-opacity text-sm font-medium'
+                className='inline-flex items-center gap-2 px-4 py-2 bg-[#0d0d0d] dark:bg-[#ededed] text-[#ededed] dark:text-[#0d0d0d] rounded-lg hover:opacity-80 transition-opacity text-sm font-medium'
             >
                 <ExternalLink size={16} />
                 Live Demo
@@ -91,7 +91,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                 href={project.links.code}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='inline-flex items-center gap-2 px-4 py-2 border border-zinc-300 dark:border-zinc-600 text-black dark:text-white rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors text-sm font-medium'
+                className='inline-flex items-center gap-2 px-4 py-2 border border-[#0d0d0d]/20 dark:border-zinc-600 text-[#0d0d0d] dark:text-[#ededed] rounded-lg hover:bg-zinc-100 dark:hover:bg-[#0d0d0d]/70 transition-colors text-sm font-medium'
             >
                 <Github size={16} />
                 Code
@@ -102,7 +102,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                 href={project.links.caseStudy}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='inline-flex items-center gap-2 px-4 py-2 border border-zinc-300 dark:border-zinc-600 text-black dark:text-white rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors text-sm font-medium'
+                className='inline-flex items-center gap-2 px-4 py-2 border border-[#0d0d0d]/20 dark:border-zinc-600 text-[#0d0d0d] dark:text-[#ededed] rounded-lg hover:bg-zinc-100 dark:hover:bg-[#0d0d0d]/70 transition-colors text-sm font-medium'
             >
                 <FileText size={16} />
                 Case Study
