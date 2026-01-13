@@ -2,7 +2,6 @@
 import { motion } from 'framer-motion';
 
 function Card({ stat, label, delay = 0, floatIntensity = 'medium' }: { stat: string | number; label: string; delay?: number; floatIntensity?: 'low' | 'medium' | 'high' }) {
-  // Define float intensities
     const intensities = {
         low: { x: 5, y: 5 },
         medium: { x: 10, y: 10 },
