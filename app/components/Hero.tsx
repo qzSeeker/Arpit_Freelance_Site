@@ -16,9 +16,24 @@ function Hero() {
             </div>
 
             <div className='flex flex-col md:flex-row text-md md:text-xl gap-4 font-funnel-display mt-6 relative'>
-                <button className='hover:bg-linear-to-br from-[#ffffff]/5 to-transparent absolute rounded-xl transition cursor-pointer border border-[#0d0d0d]/20 dark:border-[#ededed]/20 px-10 py-4'>
-                    {`View My Work`}
-                </button>
+                <div className="absolute flex w-full items-center justify-between gap-4">
+                     {/* CTA Button */}
+                    <button className="w-fit rounded-xl border border-[#0d0d0d]/20 dark:border-[#ededed]/20 bg-linear-to-br from-white/5 to-transparent px-10 py-4 transition hover:opacity-90">
+                        View My Work
+                    </button>
+
+                    {/* Social Icons */}
+                    <div className="flex items-center gap-3">
+                        <button className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#0d0d0d]/20 dark:border-[#ededed]/20 bg-linear-to-br from-white/5 to-transparent transition hover:opacity-90">
+                        <Github size={20} fill='dark:#ededed #0d0d0d' className="dark:text-[#ededed] text-[#0d0d0d]" />
+                        </button>
+
+                        <button className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#0d0d0d]/20 dark:border-[#ededed]/20 bg-linear-to-br from-white/5 to-transparent transition hover:opacity-90">
+                        <Twitter size={20} fill='dark:#ededed #0d0d0d' className="dark:text-[#ededed] text-[#0d0d0d]" />
+                        </button>
+                    </div>
+                </div>
+
                 {/* Floating Stats */}
                 <div className='w-full flex justify-end mt-20'>
                 <div className='flex flex-col md:flex-row gap-6 mt-10 w-full max-w-5xl justify-end'>
