@@ -1,4 +1,5 @@
 'use client';
+import { Github, Twitter } from 'lucide-react';
 import Card from './Card'
 
 function Hero() {

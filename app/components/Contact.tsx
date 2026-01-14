@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Linkedin, Github, Briefcase, Code, Rocket } from 'lucide-react';
+import TimerLive from './TimerLive';
 
 interface SocialLink {
     name: string;
@@ -167,6 +168,9 @@ const Contact: React.FC = () => {
             >
             Based in New Delhi, India • Open to remote & hybrid opportunities
             </motion.p>
+            <div className="mt-10">
+            <TimerLive />
+            </div>
         </motion.div>
         </div>
     );
