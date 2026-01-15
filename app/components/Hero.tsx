@@ -3,10 +3,11 @@ import { Github, Twitter } from 'lucide-react';
 import Card from './Card'
 
 function Hero() {
+    
     return (
         <div className='w-full max-w-[90%] mx-auto flex flex-col gap-6 relative top-16 py-12 px-4'>
             <div className='flex flex-col md:gap-5'>
-                <h1 className="text-[110px] md:text-[190px] max-w-3xl font-md flex flex-col leading-30 md:leading-50 tracking-tight font-funnel-display text-black dark:text-[#ededed]">
+                <h1 className="text-[100px] md:text-[190px] max-w-3xl font-md flex flex-col leading-30 md:leading-50 tracking-tight font-funnel-display text-black dark:text-[#ededed]">
                     {`Arpit Yadav.`}
                 </h1>
 
@@ -18,7 +19,7 @@ function Hero() {
             <div className='flex flex-col md:flex-row text-md md:text-xl gap-4 font-funnel-display mt-6 relative'>
                 <div className="absolute flex w-full items-center justify-between gap-4">
                      {/* CTA Button */}
-                    <button className="w-fit rounded-xl border border-[#0d0d0d]/20 dark:border-[#ededed]/20 bg-linear-to-br from-white/5 to-transparent px-10 py-4 transition hover:opacity-90">
+                    <button className="w-fit rounded-xl border border-[#0d0d0d]/20 dark:border-[#ededed]/20 bg-linear-to-br from-white/5 to-transparent px-6 md:px-10 py-4 transition hover:opacity-90">
                         View My Work
                     </button>
 
