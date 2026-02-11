@@ -34,7 +34,7 @@ const Contact: React.FC = () => {
     ];
 
     return (
-        <div className='w-full max-w-[90%] mx-auto flex flex-col gap-12 relative px-4 py-12 top-6 items-center justify-center'>
+        <div id='contact' className='w-full max-w-[90%] mx-auto flex flex-col gap-12 relative px-4 py-12 top-6 items-center justify-center'>
         <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

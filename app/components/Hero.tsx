@@ -5,7 +5,7 @@ import Card from './Card'
 function Hero() {
     
     return (
-        <div className='w-full max-w-[90%] mx-auto flex flex-col gap-6 relative top-16 py-12 px-4'>
+        <div id='home' className='w-full max-w-[90%] mx-auto flex flex-col gap-6 relative top-16 py-12 px-4'>
             <div className='flex flex-col md:gap-5'>
                 <h1 className="text-[100px] md:text-[190px] max-w-3xl font-md flex flex-col leading-30 md:leading-50 tracking-tight font-funnel-display text-black dark:text-[#ededed]">
                     {`Arpit Yadav.`}
