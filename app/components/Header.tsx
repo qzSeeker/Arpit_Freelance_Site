@@ -30,7 +30,7 @@ function Header() {
                 <div className='font-funnel-display text-sm md:text-lg flex items-center gap-3'>
                     <button 
                         onClick={() => scrollToSection('work')}
-                        className='hover:bg-[#0d0d0d] dark:hover:opacity-80 transition cursor-pointer'>
+                        className='dark:hover:opacity-80 transition cursor-pointer'>
                         Work
                     </button>
                     <span>
@@ -38,7 +38,7 @@ function Header() {
                     </span>
                     <button 
                         onClick={() => scrollToSection('contact')}
-                        className='hover:bg-[#0d0d0d] dark:hover:opacity-80 transition cursor-pointer'>
+                        className='dark:hover:opacity-80 transition cursor-pointer'>
                         Contact
                     </button>
                 </div>

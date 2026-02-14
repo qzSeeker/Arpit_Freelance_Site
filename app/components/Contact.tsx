@@ -3,6 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Linkedin, Github } from 'lucide-react';
 import TimerLive from './TimerLive';
+import { BsWhatsapp } from 'react-icons/bs';
 
 interface SocialLink {
     name: string;
@@ -16,8 +17,8 @@ const Contact: React.FC = () => {
         {
             name: 'Email',
             icon: <Mail size={20} />,
-            href: 'mailto:qzseeker@gmail.com',
-            label: 'qzseeker@gmail.com'
+            href: 'mailto:arpitspace.dev@gmail.com',
+            label: 'arpitspace.dev@gmail.com'
         },
         {
             name: 'LinkedIn',
@@ -61,11 +62,13 @@ const Contact: React.FC = () => {
             </p>
             
             <a
-                href='mailto:your.email@example.com'
+                href="https://wa.me/917827667531?text=Hi%20Arpit,%20I%E2%80%99m%20interested%20in%20working%20with%20you%20on%20a%20project.%20Can%20we%20schedule%20a%20quick%20discussion?"
+                target="_blank"
+                rel="noopener noreferrer"
                 className='inline-flex items-center gap-3 px-5 py-3 border dark:border-[#ededed]/20 border-[#0d0d0d]/20 rounded-xl p-6 bg-linear-to-br dark:from-[#ededed]/5 from-[#0d0d0d]/10 to-transparent backdrop-blur-sm hover:border-[#ededed]/40 transition-colors duration-300'
             >
-                <Mail size={20} />
-                Get in Touch
+                <BsWhatsapp size={20} />
+                Chat on WhatsApp
             </a>
             </div>
 

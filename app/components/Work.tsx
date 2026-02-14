@@ -43,7 +43,7 @@ const projects: Project[] = [
 ];
 
 return (
-<div id="work" className='w-full max-w-[90%] mx-auto flex flex-col gap-12 relative top-16 py-12 px-4'>
+<div className='w-full max-w-[90%] mx-auto flex flex-col gap-12 relative top-16 py-12 px-4'>
     {/* Header */}
     <motion.div 
     initial={{ opacity: 0, y: 20 }}

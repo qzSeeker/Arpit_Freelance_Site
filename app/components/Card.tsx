@@ -41,7 +41,7 @@ function Card({ stat, label, delay = 0, floatIntensity = 'medium' }: { stat: str
             borderColor: "rgba(255, 255, 255, 0.6)",
             }}
         >
-            <h2 className='text-5xl font-bold mb-2 bg-linear-to-br dark:from-[#ededed] from-[#0d0d0d] to-[#0d0d0d]/50 bg-clip-text text-transparent'>
+            <h2 className='text-xl md:text-3xl font-bold mb-2 bg-linear-to-br dark:from-[#ededed] from-[#0d0d0d] to-[#0d0d0d]/50 bg-clip-text text-transparent'>
             {stat}
             </h2>
             <p className='text-[#0d0d0d]/70 dark:text-[#ededed]/70 text-sm'>{label}</p>
