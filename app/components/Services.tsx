@@ -88,7 +88,7 @@ const Services = () => {
                     <h2 className="text-2xl md:text-3xl font-bold mb-2">{service.title}</h2>
                     </div>
                     <div className="flex-1">
-                    <p className="text-[#0d0d0d]/70 text-md md:text-lg">{service.description}</p>
+                    <p className="text-[#0d0d0d]/70 dark:text-[#ededed]/70 text-md md:text-lg">{service.description}</p>
                     </div>
                 </div>
 
@@ -96,8 +96,8 @@ const Services = () => {
                 <div className="grid md:grid-cols-2 gap-4 mb-6">
                     {service.features.map((feature, idx) => (
                     <div key={idx} className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 bg-[#0d0d0d] rounded-full"></div>
-                        <span className="text-[#0d0d0d]/50 text-sm md:text-md">{feature}</span>
+                        <div className="w-1.5 h-1.5 bg-[#0d0d0d] dark:bg-[#ededed] rounded-full"></div>
+                        <span className="text-[#0d0d0d]/50 dark:text-[#ededed]/50 text-sm md:text-md">{feature}</span>
                     </div>
                     ))}
                 </div>

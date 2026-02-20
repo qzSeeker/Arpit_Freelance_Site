@@ -25,7 +25,7 @@ const Projects = () => {
             title: "CloudScale",
             category: "SaaS Landing Page",
             description: "Built a high-converting landing page for a cloud infrastructure platform, optimized for lead generation with interactive pricing calculator and feature comparisons.",
-            image: "/projects/saas-landing.jpg",
+            image: "",
             tags: ["Next.js", "React", "Tailwind CSS", "Analytics"],
             liveUrl: "https://cloudscale-demo.vercel.app",
             githubUrl: "https://github.com/qzseeker/cloudscale",
