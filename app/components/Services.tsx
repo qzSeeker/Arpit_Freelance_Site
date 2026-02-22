@@ -19,7 +19,7 @@ const Services = () => {
         ],
         technologies: ["Next.js", "React", "Tailwind CSS", "TypeScript"],
         deliveryTime: "2-3 weeks",
-        startingPrice: "Starting at $1,500"
+        startingPrice: "Starting at ₹29,999"
         },
         {
         icon: <Rocket className="w-8 h-8" />,
@@ -35,7 +35,7 @@ const Services = () => {
         ],
         technologies: ["Next.js", "Tailwind CSS", "TypeScript", "Framer Motion"],
         deliveryTime: "1 week",
-        startingPrice: "Starting at $800"
+        startingPrice: "Starting at ₹15,999"
         },
         {
         icon: <Layers className="w-8 h-8" />,
@@ -51,7 +51,7 @@ const Services = () => {
         ],
         technologies: ["Next.js", "Node.js", "PostgreSQL", "MongoDB", "AWS"],
         deliveryTime: "4-8 weeks",
-        startingPrice: "Starting at $3,500"
+        startingPrice: "Starting at ₹35,999"
         }
     ];
 
@@ -85,7 +85,7 @@ const Services = () => {
                 <div className="flex flex-col items-center justify-center gap-6 mb-6">
                     <div className="flex items-center justify-center gap-3 p-3 rounded-xl border border-[#0d0d0d]/20 dark:border-[#ededed]/20 bg-linear-to-br from-white/5 to-transparent">
                     {service.icon}
-                    <h2 className="text-2xl md:text-3xl font-bold mb-2">{service.title}</h2>
+                    <h2 className="text-2xl md:text-3xl font-bold mb-2 text-[#0d0d0d] dark:text-[#ededed]">{service.title}</h2>
                     </div>
                     <div className="flex-1">
                     <p className="text-[#0d0d0d]/70 dark:text-[#ededed]/70 text-md md:text-lg">{service.description}</p>
@@ -96,7 +96,7 @@ const Services = () => {
                 <div className="grid md:grid-cols-2 gap-4 mb-6">
                     {service.features.map((feature, idx) => (
                     <div key={idx} className="flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 bg-[#0d0d0d] dark:bg-[#ededed] rounded-full"></div>
+                        <div className="w-1.5 h-1.5 bg-[#0d0d0d] dark:bg-[#ededed]/50 rounded-full"></div> 
                         <span className="text-[#0d0d0d]/50 dark:text-[#ededed]/50 text-sm md:text-md">{feature}</span>
                     </div>
                     ))}
