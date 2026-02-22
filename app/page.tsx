@@ -3,7 +3,7 @@ import Contact from "./components/Contact";
 import Skills from "./components/Skills";
 import Work from "./components/Work";
 import HireMe from "./components/HireMe";
-import Services from "./components/Services";
+import Services from "./services/page";
 import Projects from "./components/Projects";
 
 export default function Home() {
