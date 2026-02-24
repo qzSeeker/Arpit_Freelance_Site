@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, FileText } from 'lucide-react';
+import { ExternalLink, FileText, Github } from 'lucide-react';
 
 interface ProjectLinks {
     live?: string;

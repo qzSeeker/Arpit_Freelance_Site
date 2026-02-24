@@ -1,118 +1,129 @@
-'use client';
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Mail, Linkedin, Github } from 'lucide-react';
-import TimerLive from './TimerLive';
-import { BsWhatsapp } from 'react-icons/bs';
+"use client";
 
-interface SocialLink {
-    name: string;
-    icon: React.ReactNode;
-    href: string;
-    label: string;
-}
+import { motion } from "framer-motion";
+import Reveal from "./ui/Reveal";
 
-const Contact: React.FC = () => {
-    const socialLinks: SocialLink[] = [
-        {
-            name: 'Email',
-            icon: <Mail size={20} />,
-            href: 'mailto:arpitspace.dev@gmail.com',
-            label: 'arpitspace.dev@gmail.com'
-        },
-        {
-            name: 'LinkedIn',
-            icon: <Linkedin size={20} />,
-            href: 'https://linkedin.com/in/arpityadav2005',
-            label: 'View Profile'
-        },
-        {
-            name: 'GitHub',
-            icon: <Github size={20} />,
-            href: 'https://github.com/qzseeker',
-            label: 'Check Repos'
-        }
-    ];
-
+export default function Contact() {
     return (
-        <div id='contact' className='w-full max-w-[90%] mx-auto flex flex-col gap-12 relative px-4 py-28 top-6 items-center justify-center'>
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className='flex flex-col items-center text-center max-w-4xl w-full'
+        <section
+        id="contact"
+        className="px-8 md:px-12 py-28 md:py-36 bg-[#111111] border-t border-[#222222] text-center relative overflow-hidden"
         >
-            {/* Header */}
-            <h1 className="text-[30px] md:text-[50px] text-[#0d0d0d] dark:text-[#ededed] font-medium leading-tight tracking-tight font-funnel-display mb-6">
-            {`Let's Work Together.`}
-            </h1>
-            
-            <p className='text-lg md:text-xl text-[#0d0d0d]/70 text-justify dark:text-[#ededed]/70 font-funnel-display mb-4 max-w-2xl'>
-            Full-stack developer specializing in AI-powered applications. Currently seeking opportunities to build impactful products.
-            </p>
+        {/* Radial glow */}
+        <div
+            aria-hidden
+            className="absolute -top-40 left-1/2 -translate-x-1/2 w-150 h-150 rounded-full pointer-events-none"
+            style={{
+            background: "radial-gradient(circle, rgba(255,77,0,0.08) 0%, transparent 70%)",
+            }}
+        />
 
-            {/* CTA Section */}
-            <div className='mb-10 font-funnel-display border border-[#0d0d0d]/20 dark:border-[#ededed]/20 rounded-xl p-6 bg-linear-to-br from-[#0d0d0d]/10 dark:from-[#ededed]/5 to-transparent backdrop-blur-sm hover:border-[#ededed]/40 transition-colors duration-300'>
-            <h2 className='text-2xl md:text-3xl font-bold text-[#0d0d0d] dark:text-[#ededed] mb-4'>
-                Ready to collaborate?
+        <Reveal>
+            <span
+            className="inline-block font-syne text-[11px] font-bold tracking-[2px] uppercase text-[#FF4D00] px-4 py-1.5 rounded-full mb-8"
+            style={{
+                background: "rgba(255,77,0,0.1)",
+                border: "1px solid rgba(255,77,0,0.3)",
+            }}
+            >
+            Open to New Projects
+            </span>
+        </Reveal>
+
+        <Reveal delay={0.1}>
+            <h2
+            className="font-syne font-extrabold leading-[0.95] mb-5"
+            style={{ fontSize: "clamp(36px, 5.5vw, 80px)", letterSpacing: "-0.04em" }}
+            >
+            Let&apos;s build
+            <br />
+            something{" "}
+            <em className="text-[#FF4D00]" style={{ fontStyle: "italic", fontWeight: 400 }}>
+                real.
+            </em>
             </h2>
-            <p className='text-[#0d0d0d]/70 dark:text-[#ededed]/70 mb-6'>
-                {`Drop me a message and let's discuss how we can work together on your next project.`}
+        </Reveal>
+
+        <Reveal delay={0.2}>
+            <p className="text-[#555555] text-[17px] font-light leading-[1.75] max-w-md mx-auto mb-12">
+            Have a project in mind? Book a free 30-minute call and let&apos;s figure out
+            how to turn your website into your best marketing asset.
             </p>
-            
-            <a
-                href="https://wa.me/917827667531?text=Hi%20Arpit,%20I%E2%80%99m%20interested%20in%20working%20with%20you%20on%20a%20project.%20Can%20we%20schedule%20a%20quick%20discussion?"
+        </Reveal>
+
+        <Reveal delay={0.3}>
+            <div className="flex flex-wrap items-center justify-center gap-3.5 mb-16">
+            {/* WhatsApp */}
+            <motion.a
+                href="https://wa.me/917827667531?text=Hi%20Arpit,%20I%27m%20interested%20in%20working%20with%20you%20on%20a%20project."
                 target="_blank"
                 rel="noopener noreferrer"
-                className='inline-flex items-center gap-3 px-5 py-3 border dark:border-[#ededed]/20 border-[#0d0d0d]/20 rounded-xl p-6 bg-linear-to-br dark:from-[#ededed]/5 from-[#0d0d0d]/10 to-transparent backdrop-blur-sm hover:border-[#ededed]/40 transition-colors duration-300'
+                className="inline-flex items-center gap-2.5 text-white font-syne font-bold text-[15px] px-9 py-4.5 rounded no-underline"
+                style={{ background: "#25D366", padding: "18px 36px" }}
+                whileHover={{ backgroundColor: "#1ebe5d", y: -2, boxShadow: "0 12px 32px rgba(37,211,102,0.25)" }}
+                transition={{ duration: 0.2 }}
             >
-                <BsWhatsapp size={20} />
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
                 Chat on WhatsApp
-            </a>
-            </div>
+            </motion.a>
 
-            {/* Social Links */}
-            <div className='flex flex-wrap items-center justify-center gap-4 w-full'>
-            {socialLinks.map((link, index) => (
-                <motion.a
-                key={link.name}
-                href={link.href}
-                target={link.name !== 'Email' ? '_blank' : undefined}
-                rel={link.name !== 'Email' ? 'noopener noreferrer' : undefined}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                whileHover={{ scale: 1.05 }}
-                className='flex items-center gap-3 px-5 py-3 border dark:border-[#ededed]/20 border-[#0d0d0d]/20 rounded-xl p-6 bg-linear-to-br dark:from-[#ededed]/5 from-[#0d0d0d]/10 to-transparent backdrop-blur-sm hover:border-[#ededed]/40 transition-colors duration-300'
-                >
-                <div className='text-[#0d0d0d]/80 dark:text-[#ededed]/80'>
-                    {link.icon}
-                </div>
-                <span className='text-sm font-medium text-[#0d0d0d] dark:text-[#ededed]'>
-                    {link.label}
-                </span>
-                </motion.a>
-            ))}
-            </div>
-
-            {/* Footer Text */}
-            <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className='text-sm text-[#0d0d0d]/60 dark:text-[#ededed]/60 font-funnel-display mt-8'
+            {/* Cal.com */}
+            <motion.a
+                href="https://cal.com/arpitspace"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#FF4D00] text-white font-syne font-bold text-sm tracking-wide px-8 py-4 rounded hover:bg-[#FF4D00] hover:no-underline"
+                style={{ padding: "18px 32px" }}
+                whileHover={{ backgroundColor: "#e64400", y: -1 }}
+                transition={{ duration: 0.2 }}
             >
-            Based in New Delhi, India • Open to remote & hybrid opportunities
-            </motion.p>
-            <div className="mt-10">
-            <TimerLive />
-            </div>
-        </motion.div>
-        </div>
-    );
-};
+                Book a Free Call →
+            </motion.a>
 
-export default Contact;
+            {/* Email */}
+            <motion.a
+                href="mailto:arpitspace.dev@gmail.com"
+                className="inline-flex items-center gap-2 text-[#cccccc] text-sm border border-[#222222] px-8 py-4 rounded hover:border-[#555555] hover:text-white no-underline"
+                style={{ padding: "18px 32px" }}
+                whileHover={{ borderColor: "#555", color: "#f5f0e8" }}
+                transition={{ duration: 0.2 }}
+            >
+                Send Email
+            </motion.a>
+            </div>
+        </Reveal>
+
+        {/* Info row */}
+        <Reveal delay={0.4}>
+            <div className="flex flex-wrap items-center justify-center gap-8">
+            {[
+                { icon: "✉", label: "arpitspace.dev@gmail.com", href: "mailto:arpitspace.dev@gmail.com" },
+                { icon: "in", label: "LinkedIn", href: "https://linkedin.com/in/arpityadav2005" },
+                { icon: "⌥", label: "GitHub", href: "https://github.com/qzseeker" },
+                { icon: "📍", label: "New Delhi · Remote-friendly", href: null },
+            ].map((item) =>
+                item.href ? (
+                <a
+                    key={item.label}
+                    href={item.href}
+                    target={item.href.startsWith("http") ? "_blank" : undefined}
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-[#555555] text-[14px] no-underline hover:text-[#CCCCCC] transition-colors"
+                >
+                    <span className="text-[#FF4D00]">{item.icon}</span>
+                    {item.label}
+                </a>
+                ) : (
+                <span key={item.label} className="flex items-center gap-2 text-[#555555] text-[14px]">
+                    <span className="text-[#FF4D00]">{item.icon}</span>
+                    {item.label}
+                </span>
+                )
+            )}
+            </div>
+        </Reveal>
+        </section>
+    );
+}

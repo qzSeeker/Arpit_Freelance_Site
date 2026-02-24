@@ -1,62 +1,122 @@
-'use client';
-import { Github, Twitter } from 'lucide-react';
-import Card from './Card'
-import Link from 'next/link';
+"use client";
 
-function Hero() {
-    
+import { motion, cubicBezier } from "framer-motion";
+
+const fadeUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: (delay: number) => ({
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.8, delay, ease: cubicBezier(0.22, 1, 0.36, 1) },
+    }),
+};
+
+export default function Hero() {
     return (
-        <div id='home' className='w-full max-w-[90%] mx-auto flex flex-col gap-6 relative top-16 py-12 px-4'>
-            <div className='flex flex-col md:gap-5'>
-                <h1 className="text-[100px] md:text-[190px] max-w-3xl font-md flex flex-col leading-30 md:leading-50 tracking-tight font-funnel-display text-black dark:text-[#ededed]">
-                    {`Arpit Yadav.`}
-                </h1>
-
-                <h1 className='font-funnel-display text-lg md:text-xl tracking-tight text-[#0d0d0d] dark:text-[#ededed]/80'>
-                    {`SDE ► I build high-converting websites for businesses that want more customers.`}
-                </h1>
-                {/* Social Icons */}
-                    <div className="flex items-center gap-3 mt-4">
-                        <button className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#0d0d0d]/20 dark:border-[#ededed]/20 bg-linear-to-br from-white/5 to-transparent transition hover:opacity-90">
-                        <Github size={20} fill='dark:#ededed #0d0d0d' className="dark:text-[#ededed] text-[#0d0d0d]" />
-                        </button>
-
-                        <button className="flex h-10 w-10 items-center justify-center rounded-xl border border-[#0d0d0d]/20 dark:border-[#ededed]/20 bg-linear-to-br from-white/5 to-transparent transition hover:opacity-90">
-                        <Twitter size={20} fill='dark:#ededed #0d0d0d' className="dark:text-[#ededed] text-[#0d0d0d]" />
-                        </button>
-                    </div>
-            </div>
-
-            <div className='flex flex-col md:flex-row text-md md:text-xl gap-4 font-funnel-display mt-6 relative'>
-                <div className="absolute flex w-full items-center justify-between gap-4">
-                     {/* CTA Button */}
-                    <div className='flex gap-4'>
-                    <button className="w-fit rounded-xl border border-[#0d0d0d]/20 dark:border-[#ededed]/20 bg-linear-to-br from-white/5 to-transparent px-6 md:px-10 py-4 transition hover:opacity-90">
-                        View My Work
-                    </button>
-                    <Link
-                    href="https://cal.com/arpitspace"
-                    target="_blank"
-                    className="w-fit rounded-xl border border-[#0d0d0d]/20 dark:border-[#ededed]/20 bg-linear-to-br from-white/5 to-transparent px-6 md:px-10 py-4 transition hover:opacity-90 inline-block text-center"
-                    >
-                    Book Free Consultation
-                    </Link>
-                    </div>
-                </div>
-
-                {/* Floating Stats */}
-                <div className='w-full flex justify-end mt-20'>
-                <div className='grid md:grid-cols-4 grid-cols-2 gap-6 mt-10 w-full justify-end'>
-                    <Card stat="1+ Year" label="Experience" delay={0.2} floatIntensity="medium" />
-                    <Card stat="10+" label="Projects Built" delay={0.4} floatIntensity="medium" />
-                    <Card stat="AI-Powered" label="System Developed" delay={0.6} floatIntensity="medium" />
-                    <Card stat="Production-Ready" label="Applications" delay={0.8} floatIntensity="medium" />
-                </div>
-                </div>
-            </div>
-
+        <section
+        id="hero"
+        className="min-h-screen flex flex-col justify-between px-8 md:px-12 pb-20 pt-32 relative overflow-hidden"
+        >
+        {/* Ghost BG Text */}
+        <div
+            aria-hidden
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-syne font-extrabold text-[clamp(80px,18vw,260px)] leading-none tracking-tighter pointer-events-none select-none whitespace-nowrap"
+            style={{
+            color: "transparent",
+            WebkitTextStroke: "1px rgba(255,255,255,0.035)",
+            letterSpacing: "-0.05em",
+            }}
+        >
+            ARPITSPACE
         </div>
-    )
-}
 
-export default Hero
+        {/* Radial glow */}
+        <div
+            aria-hidden
+            className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-175 h-175 rounded-full pointer-events-none"
+            style={{
+            background: "radial-gradient(circle, rgba(255,77,0,0.06) 0%, transparent 70%)",
+            }}
+        />
+
+        {/* Availability badge */}
+        <motion.div
+            custom={0.15}
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            className="flex items-center gap-2 mb-8"
+        >
+            <span
+            className="w-2 h-2 rounded-full bg-green-400 block animate-pulse_dot"
+            style={{ animation: "pulse_dot 2s ease-in-out infinite" }}
+            />
+            <span className="font-syne text-[11px] font-bold tracking-[2.5px] uppercase text-[#555555]">
+            Available for new projects — 2026
+            </span>
+        </motion.div>
+
+        {/* Headline */}
+        <motion.h1
+            custom={0.3}
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            className="font-syne font-extrabold leading-[0.93] mb-10"
+            style={{
+            fontSize: "clamp(40px, 7.5vw, 100px)",
+            letterSpacing: "-0.04em",
+            }}
+        >
+            Full-stack dev
+            <br />
+            who builds sites
+            <br />
+            that{" "}
+            <em className="not-italic text-[#FF4D00]" style={{ fontStyle: "italic", fontWeight: 400 }}>
+            actually sell.
+            </em>
+        </motion.h1>
+
+        {/* Bottom row */}
+        <motion.div
+            custom={0.5}
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            className="flex flex-col md:flex-row md:items-end justify-between gap-10"
+        >
+            <p className="max-w-md tracking-wide text-[16px] leading-[1.75] font-light text-[#555555] text-muted">
+            I&apos;m{" "}
+            <strong className="font-medium text-[#CCCCCC]">Arpit Yadav</strong>{" "}
+            — a full-stack developer from New Delhi specialising in{" "}
+            <strong className="text-text-muted font-medium text-[#CCCCCC]">
+                conversion-focused websites
+            </strong>{" "}
+            for small businesses and D2C brands. Not just pretty pages — systems
+            that bring in customers.
+            </p>
+
+            <div className="flex flex-col items-start md:items-end gap-3">
+            <a
+                href="https://cal.com/arpitspace"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2.5 bg-[#FF4D00] text-white font-syne font-bold text-sm tracking-wide px-8 py-4 rounded hover:bg-[#FF4D00]/80 transition-all duration-200 hover:-translate-y-0.5 no-underline whitespace-nowrap"
+            >
+                Book Free Consultation →
+            </a>
+            <a
+                href="#work"
+                className="inline-flex items-center gap-2.5 text-text-muted font-syne text-sm px-8 py-4 border border-white/40 hover:border-white/80 rounded hover:border hover:text-white transition-all duration-200 no-underline whitespace-nowrap"
+            >
+                See My Work ↓
+            </a>
+            </div>
+        </motion.div>
+
+        {/* Bottom border */}
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-border to-transparent" />
+        </section>
+    );
+}

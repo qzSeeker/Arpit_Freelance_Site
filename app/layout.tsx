@@ -1,39 +1,42 @@
 import type { Metadata } from "next";
-import { Funnel_Display, Manrope } from "next/font/google";
 import "./globals.css";
-import Header from "./components/Header";
-
-const manrope = Manrope({
-  variable: "--font-manrope",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-});
-
-const funnel_display = Funnel_Display({
-  variable: "--font-funnel-display",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-});
+import CustomCursor from "./components/ui/CustomCursor";
+import { Syne, DM_Sans } from "next/font/google";
 
 export const metadata: Metadata = {
-  title: "Arpit Yadav - SDE",
-  description: "SDE ► Building AI-powered web applications",
+  title: "Arpit Yadav — Full-Stack Developer for Businesses & Brands",
+  description:
+    "Full-stack developer from New Delhi specialising in conversion-focused websites for small businesses and D2C brands. Not just pretty pages — systems that bring in customers.",
+  keywords: ["freelance web developer Delhi", "full-stack developer India", "Next.js developer", "D2C website", "business website India"],
+  authors: [{ name: "Arpit Yadav" }],
+  openGraph: {
+    title: "Arpit Yadav — Full-Stack Developer",
+    description: "Websites that work as hard as you do.",
+    type: "website",
+  },
 };
+
+const syne = Syne({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-syne",
+});
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "500"],
+  variable: "--font-dm-sans",
+});
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="icon" href="/logo.png" />
-      </head>
-      <body
-        className={`${manrope.variable} ${funnel_display.variable} antialiased`}
-      >
-        <Header />
+    <html lang="en" className={`scroll-smooth ${syne.variable} ${dmSans.variable}`}>
+      <body className="bg-black text-white font-dm antialiased overflow-x-hidden">
+        <CustomCursor />
         {children}
       </body>
     </html>

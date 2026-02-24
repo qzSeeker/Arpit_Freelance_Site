@@ -1,21 +1,29 @@
-import Hero from "./components/Hero";
 import Contact from "./components/Contact";
-import Skills from "./components/Skills";
+import FAQ from "./components/FAQ";
+import Footer from "./components/Footer";
+import Hero from "./components/Hero";
+import Marquee from "./components/Marquee";
+import Navbar from "./components/Navbar";
+import Problem from "./components/Problem";
+import Process from "./components/Process";
+import Services from "./components/Services";
+import Testimonials from "./components/Testimonials";
 import Work from "./components/Work";
-import HireMe from "./components/HireMe";
-import Services from "./services/page";
-import Projects from "./components/Projects";
 
 export default function Home() {
   return (
-    <div>
+    <main>
+      <Navbar />
       <Hero />
-      <Services />        {/* For Freelance Clients */}
-      <Projects />        {/* Case studies (important for both) */}
-      <Work />            {/* Experience (important for recruiters) */}
-      <Skills />          {/* Technical depth */}
-      <HireMe />          {/* Strong CTA */}
-      <Contact />         {/* Final action */}
-    </div>
+      <Marquee />
+      <Problem />
+      <Services />
+      <Process />
+      <Work />
+      <Testimonials />
+      <FAQ />
+      <Contact />
+      <Footer />
+    </main>
   );
 }

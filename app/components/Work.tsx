@@ -1,73 +1,155 @@
-'use client';
+"use client";
+
 import { motion } from "framer-motion";
-import ProjectCard from "./WorkCard";
+import SectionLabel from "./ui/SectionLabel";
+import Reveal from "./ui/Reveal";
 
-interface Project {
-    title: string;
-    role: string;
-    period: string;
-    description: string;
-    stats: string[];
-    tech: string[];
-    links: {
-        live?: string;
-        code?: string;
-        caseStudy?: string;
-    };
-}
-
-const Work: React.FC = () => {
-const projects: Project[] = [
-{
-    title: 'Nonomate',
-    role: 'Founder',
-    period: '2025-Present',
-    description: 'Building NonoMate — an AI-driven platform to connect students with verified internships and real opportunities. No Free Labor. No Fake Offers. Just Real Internships. Spearheaded frontend development from scratch using Next.js, React.js, Tailwind CSS, JavaScript, and TypeScript.',
-    stats: ['1000+ students', 'Full-stack', 'Founder'],
-    tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'AI'],
-    links: {
-    // caseStudy: '#'
-    }
-},
+const projects = [
     {
-    title: 'RightHome AI',
-    role: 'Full Stack Engineer',
-    period: '2024-2025',
-    description: 'Built real-time AI chatbot features using Next.js APIs and OpenAI (ChatGPT) for dynamic property assistance. Developed backend services using Express.js for handling user preferences and real estate data. Integrated voice-based AI assistant using Vapi.ai and built a unified chat interface for web.',
-    stats: ['500+ daily queries', '95% accuracy', '35% faster APIs'],
-    tech: ['Next.js', 'Express.js', 'OpenAI', 'ChatGPT', 'Vapi.ai'],
-    links: {
-    // caseStudy: '#'
-    }
-},
+        type: "Fitness · Business Website",
+        name: "Ironspark Gym",
+        desc: "Conversion-focused website for a fitness centre — class schedules, trainer profiles, and integrated membership inquiry system.",
+        result: "📈 30% increase in membership inquiries after launch",
+        icon: "🏋️",
+        live: "https://ironspark.vercel.app",
+        source: "https://github.com/qzseeker/ironspark",
+        concept: true,
+    },
+    {
+        type: "SaaS · Landing Page",
+        name: "CloudScale",
+        desc: "High-converting landing page for a cloud infrastructure platform — interactive pricing calculator, feature comparison, and A/B-tested CTAs.",
+        result: "⚡ 1.2s load time · Conversion-optimised architecture",
+        icon: "☁️",
+        live: "https://cloudscale-demo.vercel.app",
+        source: "https://github.com/qzseeker/cloudscale",
+        concept: true,
+    },
+    {
+        type: "AI Platform · Full-Stack",
+        name: "RightHome AI",
+        desc: "Real-time AI chatbot for property assistance built with Next.js, OpenAI, and Vapi.ai voice interface. Handled 500+ daily queries.",
+        result: "🎯 95% accuracy · 35% faster API response time",
+        icon: "🤖",
+        live: null,
+        source: "https://github.com/qzseeker",
+        concept: false,
+    },
+    {
+        type: "Ed-Tech · Full-Stack Platform",
+        name: "NonoMate",
+        desc: "AI-driven internship platform connecting students with verified opportunities. Built from scratch as founder — no fake offers, just real internships.",
+        result: "👥 1,000+ students onboarded on launch",
+        icon: "🎓",
+        live: null,
+        source: "https://github.com/qzseeker",
+        concept: false,
+    },
 ];
 
-return (
-<div className='w-full max-w-[90%] mx-auto flex flex-col gap-12 relative top-16 py-12 px-4'>
-    {/* Header */}
-    <motion.div 
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.6 }}
-    className='flex flex-col md:gap-5'
-    >
-    <h1 className="text-[30px] md:text-[50px] max-w-3xl font-medium flex flex-col leading-tight tracking-tight font-funnel-display text-[#0d0d0d] dark:text-[#ededed]">
-        Experience.
-    </h1>
-    <p className='text-lg md:text-xl text-[#0d0d0d]/70 dark:text-[#ededed]/70 max-w-2xl font-funnel-display'>
-        A showcase of my professional work and projects.
-    </p>
-    </motion.div>
+export default function Work() {
+    return (
+        <section id="work" className="px-8 md:px-12 py-28 md:py-36 bg-black">
+        <SectionLabel text="Selected Work" />
 
-    {/* Projects Grid */}
-    <div className='grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 w-full md:max-w-[80%] relative mx-auto'>
-    {projects.map((project, index) => (
-        <ProjectCard key={index} project={project} index={index} />
-    ))}
-    </div>
-</div>
-);
-};
+        <Reveal>
+            <h2
+            className="font-syne font-extrabold leading-[1.05] mb-16"
+            style={{ fontSize: "clamp(32px, 4.5vw, 60px)", letterSpacing: "-0.04em" }}
+            >
+            Projects that
+            <br />
+            <em className="text-[#FF4D00]" style={{ fontStyle: "italic", fontWeight: 400 }}>
+                did the job.
+            </em>
+            </h2>
+        </Reveal>
 
-export default Work;
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
+            {projects.map((p, i) => (
+            <Reveal key={p.name} delay={i * 0.1}>
+                <motion.div
+                className="bg-card border border-[#222222] rounded-md overflow-hidden flex flex-col"
+                whileHover={{ borderColor: "#333" }}
+                transition={{ duration: 0.3 }}
+                >
+                {/* Image placeholder */}
+                <div
+                    className="w-full flex items-center justify-center text-5xl border-b border-[#222222] relative"
+                    style={{
+                    aspectRatio: "16/9",
+                    background:
+                        "linear-gradient(135deg, #1a1a1a 0%, #222 50%, #1a1a1a 100%)",
+                    }}
+                >
+                    {p.icon}
+                    {/* Gradient overlay */}
+                    <div
+                    className="absolute inset-0"
+                    style={{
+                        background:
+                        "linear-gradient(135deg, rgba(255,77,0,0.07), transparent)",
+                    }}
+                    />
+                    {p.concept && (
+                    <span className="absolute top-3 right-3 text-[10px] font-bold tracking-[1px] uppercase bg-black/70 border border-[#222222] text-[#555555] px-2.5 py-1 rounded-sm z-10">
+                        Concept Project
+                    </span>
+                    )}
+                </div>
+
+                {/* Body */}
+                <div className="p-7 flex flex-col flex-1">
+                    <div className="font-syne text-[11px] font-bold tracking-[2px] uppercase text-[#FF4D00] mb-2.5">
+                    {p.type}
+                    </div>
+                    <div className="font-syne font-extrabold text-[22px] tracking-tight mb-2.5">
+                    {p.name}
+                    </div>
+                    <p className="text-[#555555] text-[14px] leading-[1.75] mb-5 flex-1">{p.desc}</p>
+
+                    {/* Result pill */}
+                    <div
+                    className="text-[13px] font-medium px-3.5 py-2.5 rounded mb-5"
+                    style={{
+                        background: "rgba(255,77,0,0.08)",
+                        border: "1px solid rgba(255,77,0,0.2)",
+                        color: "#ff7a40",
+                    }}
+                    >
+                    {p.result}
+                    </div>
+
+                    {/* Links */}
+                    <div className="flex gap-3">
+                    {p.live && (
+                        <motion.a
+                        href={p.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[13px] font-semibold text-white bg-accent px-4 py-2 rounded no-underline"
+                        whileHover={{ backgroundColor: "#e64400" }}
+                        transition={{ duration: 0.2 }}
+                        >
+                        View Live ↗
+                        </motion.a>
+                    )}
+                    <motion.a
+                        href={p.source}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[13px] font-semibold text-[#555555] border border-[#222222] px-4 py-2 rounded no-underline"
+                        whileHover={{ borderColor: "#555", color: "#f5f0e8" }}
+                        transition={{ duration: 0.2 }}
+                    >
+                        Source
+                    </motion.a>
+                    </div>
+                </div>
+                </motion.div>
+            </Reveal>
+            ))}
+        </div>
+        </section>
+    );
+}
