@@ -1,162 +1,133 @@
-'use client';
-import React from 'react';
-import { Code, Rocket, Layers } from 'lucide-react';
-import { motion } from 'framer-motion';
+"use client";
+
+import { motion } from "framer-motion";
+import SectionLabel from "../components/ui/SectionLabel";
+import Reveal from "../components/ui/Reveal";
 import { useRouter } from 'next/navigation';
 
-const Services = () => {
-    const router = useRouter();
+const services = [
+    {
+        num: "01",
+        icon: "🏪",
+        title: "Business Website",
+        slug: "business-websites",
+        desc: "A professional, mobile-first website for your shop, gym, clinic, or service business. Built to rank on Google and turn visitors into walk-ins and calls.",
+        tags: ["Custom Design", "SEO-Ready", "Mobile-First", "CMS", "Analytics"],
+        price: "₹29,999",
+        delivery: "2–3 weeks",
+    },
+    {
+        num: "02",
+        icon: "🎯",
+        title: "D2C Landing Page",
+        slug: "d2c-landing-pages",
+        desc: "A high-converting landing page for your product or brand. Built with psychological triggers, strong CTA hierarchy, and speed-optimised for every device.",
+        tags: ["Conversion-Focused", "A/B Ready", "Lead Forms", "Fast Load"],
+        price: "₹15,999",
+        delivery: "1 week",
+    },
+    {
+        num: "03",
+        icon: "⚙️",
+        title: "Full-Stack Web App",
+        slug: "full-stack-web-app",
+        desc: "Custom web applications with backend APIs, databases, auth, and cloud deployment. Built for brands that need a product — not just a page.",
+        tags: ["Custom APIs", "Database Design", "Auth", "Cloud Deploy", "AI Integration"],
+        price: "₹35,999",
+        delivery: "4–8 weeks",
+    },
+];
 
-    const services = [
-        {
-            icon: <Code className="w-8 h-8" />,
-            title: "Business Websites",
-            slug: "business-websites",
-            description: "Professional, responsive websites tailored for your business needs. Built with modern technologies to ensure fast loading times and excellent user experience.",
-            features: [
-                "Custom design & branding",
-                "Mobile-first responsive",
-                "SEO optimized",
-                "Content management",
-                "Fast performance",
-                "Analytics integration"
-            ],
-            technologies: ["Next.js", "React", "Tailwind CSS", "TypeScript"],
-            deliveryTime: "2-3 weeks",
-            startingPrice: "Starting at ₹29,999"
-        },
-        {
-            icon: <Rocket className="w-8 h-8" />,
-            title: "Landing Pages",
-            slug: "landing-pages",
-            description: "High-converting landing pages designed to capture leads and drive conversions. Perfect for product launches, campaigns, and marketing initiatives.",
-            features: [
-                "Conversion-focused design",
-                "A/B testing ready",
-                "Lead capture forms",
-                "Analytics & tracking",
-                "Fast load times",
-                "Mobile optimized"
-            ],
-            technologies: ["Next.js", "Tailwind CSS", "TypeScript", "Framer Motion"],
-            deliveryTime: "1 week",
-            startingPrice: "Starting at ₹15,999"
-        },
-        {
-            icon: <Layers className="w-8 h-8" />,
-            title: "Fullstack Web Apps",
-            slug: "fullstack-web-apps",
-            description: "Complete web applications with both frontend and backend. From concept to deployment, I build scalable solutions that grow with your business.",
-            features: [
-                "Custom backend APIs",
-                "Database design",
-                "User authentication",
-                "Real-time features",
-                "Cloud deployment",
-                "Ongoing support"
-            ],
-            technologies: ["Next.js", "Node.js", "PostgreSQL", "MongoDB", "AWS"],
-            deliveryTime: "4-8 weeks",
-            startingPrice: "Starting at ₹35,999"
-        }
-    ];
+
+export default function Services() {
+    const router = useRouter();
 
     const handleGetStarted = (slug: string, title: string) => {
         router.push(`/contact?service=${encodeURIComponent(title)}`);
     };
 
     return (
-        <div className="min-h-screen font-funnel-display">
-            {/* Hero Section */}
-            <section className="max-w-[90%] mx-auto px-6 py-20">
-                <div className="space-y-4">
-                    <h1 className="text-[30px] md:text-[50px] max-w-3xl font-medium leading-tight">
-                        Services.
-                    </h1>
-                    <p className="text-lg md:text-xl dark:text-[#ededed]/70 text-[#0d0d0d]/70 max-w-3xl">
-                        Professional web development services to bring your digital vision to life.
-                    </p>
+        <section id="services" className="px-8 md:px-12 py-28 md:py-36 bg-black">
+        <SectionLabel text="What I Build" />
+
+        <Reveal>
+            <h2
+            className="font-syne font-extrabold leading-[1.05] mb-16"
+            style={{ fontSize: "clamp(32px, 4.5vw, 60px)", letterSpacing: "-0.04em" }}
+            >
+            Services{" "}
+            <em className="text-[#FF4D00]" style={{ fontStyle: "italic", fontWeight: 400 }}>
+                tailored
+            </em>
+            <br />
+            for real businesses.
+            </h2>
+        </Reveal>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-0.5 border border-[#222222] rounded-lg overflow-hidden">
+            {services.map((s, i) => (
+            <Reveal key={s.num} delay={i * 0.1}>
+                <motion.div
+                className="bg-card p-10 md:p-12 h-full flex flex-col relative overflow-hidden group"
+                whileHover={{ background: "#1a1a1a" }}
+                transition={{ duration: 0.3 }}
+                onClick={() => handleGetStarted(s.slug, s.title)}
+                >
+                {/* Top accent line */}
+                <motion.div
+                    className="absolute top-0 left-0 right-0 h-0.5 bg-[#FF4D00] origin-left"
+                    initial={{ scaleX: 0 }}
+                    whileHover={{ scaleX: 1 }}
+                    transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                />
+
+                <div className="font-syne text-[11px] font-bold tracking-[2px] uppercase text-[#FF4D00] mb-6">
+                    {s.num}
                 </div>
-            </section>
+                <div className="text-4xl mb-5">{s.icon}</div>
+                <div className="font-syne font-bold text-[21px] tracking-tight mb-3.5">
+                    {s.title}
+                </div>
+                <p className="text-[#555555] text-[14px] leading-[1.75] mb-7 flex-1">{s.desc}</p>
 
-            {/* Services Grid */}
-            <section className="max-w-[90%] mx-auto px-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:max-w-[80%] w-full mx-auto">
-                    {services.map((service, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="border dark:border-[#ededed]/20 border-[#0d0d0d]/20 rounded-xl p-4 md:p-8 bg-linear-to-br dark:from-[#ededed]/5 from-[#0d0d0d]/10 to-transparent backdrop-blur-sm hover:border-[#ededed]/40 transition-colors duration-300"
-                        >
-                            {/* Service Header */}
-                            <div className="flex flex-col items-center justify-center gap-6 mb-6">
-                                <div className="flex items-center justify-center gap-3 p-3 rounded-xl border border-[#0d0d0d]/20 dark:border-[#ededed]/20 bg-linear-to-br from-white/5 to-transparent">
-                                    {service.icon}
-                                    <h2 className="text-2xl md:text-3xl font-bold mb-2 text-[#0d0d0d] dark:text-[#ededed]">{service.title}</h2>
-                                </div>
-                                <div className="flex-1">
-                                    <p className="text-[#0d0d0d]/70 dark:text-[#ededed]/70 text-md md:text-lg">{service.description}</p>
-                                </div>
-                            </div>
-
-                            {/* Features Grid */}
-                            <div className="grid md:grid-cols-2 gap-4 mb-6">
-                                {service.features.map((feature, idx) => (
-                                    <div key={idx} className="flex items-center gap-2">
-                                        <div className="w-1.5 h-1.5 bg-[#0d0d0d] dark:bg-[#ededed]/50 rounded-full"></div>
-                                        <span className="text-[#0d0d0d]/50 dark:text-[#ededed]/50 text-sm md:text-md">{feature}</span>
-                                    </div>
-                                ))}
-                            </div>
-
-                            {/* Technologies */}
-                            <div className="mb-6">
-                                <p className="text-sm text-neutral-500 mb-3">Technologies</p>
-                                <div className="flex flex-wrap gap-2">
-                                    {service.technologies.map((tech, idx) => (
-                                        <span
-                                            key={idx}
-                                            className="px-3 py-1 text-xs rounded-full bg-[#0d0d0d]/10 dark:bg-[#ededed]/10 text-[#0d0d0d]/80 dark:text-[#ededed]/80"
-                                        >
-                                            {tech}
-                                        </span>
-                                    ))}
-                                </div>
-                            </div>
-
-                            {/* Footer */}
-                            <div className="flex flex-col md:flex-row items-center justify-between pt-6 border-t border-neutral-800">
-                                <div className="flex items-center gap-6">
-                                    <div>
-                                        <p className="text-sm text-neutral-500">Delivery Time</p>
-                                        <p className="font-semibold">{service.deliveryTime}</p>
-                                    </div>
-                                    <div className="w-px h-10 bg-neutral-800"></div>
-                                    <div>
-                                        <p className="text-sm text-neutral-500">Investment</p>
-                                        <p className="font-semibold">{service.startingPrice}</p>
-                                    </div>
-                                </div>
-                                <motion.button
-                                    initial={{ opacity: 0, scale: 0.9 }}
-                                    whileInView={{ opacity: 1, scale: 1 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.5, delay: 0.2 }}
-                                    onClick={() => handleGetStarted(service.slug, service.title)}
-                                    className='mt-6 md:mt-0 px-6 py-2.5 rounded-lg bg-[#0d0d0d] dark:bg-[#ededed] text-[#ededed] dark:text-[#0d0d0d] font-medium text-sm hover:opacity-90 transition-opacity duration-200 cursor-pointer'
-                                >
-                                    Get Started
-                                </motion.button>
-                            </div>
-                        </motion.div>
+                {/* Tags */}
+                <div className="flex flex-wrap gap-1.5 mb-8">
+                    {s.tags.map((t) => (
+                    <span
+                        key={t}
+                        className="text-[11px] font-semibold text-[#555555] bg-white/5 border border-[#222222] px-2.5 py-1 rounded-sm tracking-wide"
+                    >
+                        {t}
+                    </span>
                     ))}
                 </div>
-            </section>
-        </div>
-    );
-};
 
-export default Services;
+                {/* Price */}
+                <div>
+                    <div className="font-syne font-extrabold text-[28px] tracking-tight leading-none mb-1">
+                    {s.price}
+                    <span className="text-[#555555] font-dm font-light text-base ml-1">onwards</span>
+                    </div>
+                    <div className="text-[#555555] text-[12px]">Delivery in {s.delivery}</div>
+                </div>
+                </motion.div>
+            </Reveal>
+            ))}
+        </div>
+
+        <Reveal delay={0.3}>
+            <p className="mt-8 text-center text-[#555555] text-[14px]">
+            Not sure what you need?{" "}
+            <a
+                href="https://cal.com/arpitspace"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#FF4D00] hover:underline"
+            >
+                Let&apos;s talk for free →
+            </a>
+            </p>
+        </Reveal>
+        </section>
+    );
+}

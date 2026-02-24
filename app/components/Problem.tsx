@@ -66,7 +66,7 @@ export default function Problem() {
                 {stats.map((s, i) => (
                 <motion.div
                     key={i}
-                    className="bg-card border border-border p-8"
+                    className="bg-card border border-[#222222] p-8"
                     style={{
                     borderRadius:
                         i === 0 ? "8px 0 0 0"

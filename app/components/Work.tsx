@@ -65,7 +65,7 @@ export default function Work() {
             </h2>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-0.5">
             {projects.map((p, i) => (
             <Reveal key={p.name} delay={i * 0.1}>
                 <motion.div

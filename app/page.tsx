@@ -6,9 +6,9 @@ import Marquee from "./components/Marquee";
 import Navbar from "./components/Navbar";
 import Problem from "./components/Problem";
 import Process from "./components/Process";
-import Services from "./components/Services";
 import Testimonials from "./components/Testimonials";
 import Work from "./components/Work";
+import Services from "./services/page";
 
 export default function Home() {
   return (

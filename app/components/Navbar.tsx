@@ -32,7 +32,7 @@ export default function Navbar() {
         }`}
         >
         {/* Logo */}
-        <Link href="#" className="font-syne font-extrabold text-2xl tracking-tight text-white no-underline">
+        <Link href="#hero" className="font-syne font-extrabold text-2xl tracking-tight text-white no-underline">
             arpit<span className="text-[#FF4D00]">.</span>
         </Link>
 
@@ -42,7 +42,7 @@ export default function Navbar() {
             <li key={l.label}>
                 <a
                 href={l.href}
-                className="text-[#555555] text-[13.5px] font-medium tracking-wide hover:text-white transition-colors duration-200 no-underline"
+                className="text-[#CCCCCC] text-[13.5px] font-medium tracking-wide hover:text-white transition-colors duration-200 no-underline"
                 >
                 {l.label}
                 </a>

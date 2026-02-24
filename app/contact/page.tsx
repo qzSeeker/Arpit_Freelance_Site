@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useSearchParams } from 'next/navigation';
 import { ArrowRight, CheckCircle, Loader2, ChevronDown } from 'lucide-react';
 
-const SERVICES = ["Business Websites", "Landing Pages", "Fullstack Web Apps", "Other"];
+const SERVICES = ["Business Websites", "D2C Landing Pages", "Full-Stack Web App", "Other"];
 
 const BUDGETS = [
     "Under ₹15,000",
@@ -93,14 +93,14 @@ function ContactForm() {
                     <CheckCircle className="w-12 h-12 text-green-500" />
                 </div>
                 <div>
-                    <h2 className="text-3xl font-bold mb-2">Message Received!</h2>
-                    <p className="dark:text-[#ededed]/60 text-[#0d0d0d]/60 max-w-sm">
+                    <h2 className="text-3xl font-bold mb-2 font-syne">Message Received!</h2>
+                    <p className="dark:text-[#ededed]/60 text-[#555555] max-w-sm">
                         Thanks {form.name.split(' ')[0]}! {`I'll review your project details and get back to you within 24 hours.`}
                     </p>
                 </div>
                 <a
-                    href="/services"
-                    className="mt-4 px-6 py-2.5 rounded-lg border dark:border-[#ededed]/20 border-[#0d0d0d]/20 text-sm hover:opacity-70 transition-opacity"
+                    href="/"
+                    className="mt-4 px-6 py-2.5 rounded-lg border border-[#222222] text-sm hover:opacity-70 transition-opacity"
                 >
                     Back to Services
                 </a>
@@ -255,7 +255,7 @@ function ContactForm() {
                 disabled={status === 'loading'}
                 whileHover={{ scale: 1.01 }}
                 whileTap={{ scale: 0.99 }}
-                className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-[#0d0d0d] dark:bg-[#ededed] text-[#ededed] dark:text-[#0d0d0d] font-medium text-sm hover:opacity-90 transition-opacity duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-[#FF4D00] hover:bg-[#FF4D00]/70 transition-all duration-150 ease-in text-white font-medium text-sm disabled:opacity-50 disabled:cursor-not-allowed"
             >
                 {status === 'loading' ? (
                     <>
@@ -277,7 +277,7 @@ function ContactForm() {
 function Field({ label, error, children }: { label: string; error?: string; children: React.ReactNode }) {
     return (
         <div className="space-y-1.5">
-            <label className="block text-sm font-medium dark:text-[#ededed]/80 text-[#0d0d0d]/80">
+            <label className="block text-sm font-medium text-[#0d0d0d]/80">
                 {label}
             </label>
             {children}
@@ -313,10 +313,10 @@ export default function ContactPage() {
             {/* Hero */}
             <section className="px-6 py-12 md:py-0 relative top-20 md:top-0">
                 <div className="space-y-4">
-                    <h1 className="text-[30px] md:text-[50px] font-medium leading-tight">
+                    <h1 className="text-[30px] md:text-[50px] font-medium leading-tight text-[#CCCCCC] font-syne">
                         {`Let's Work Together.`}
                     </h1>
-                    <p className="text-lg md:text-xl dark:text-[#ededed]/70 text-[#0d0d0d]/70 max-w-xl">
+                    <p className="text-lg md:text-xl text-[#555555] max-w-xl font-syne">
                         {`Fill in the details below and I'll get back to you within 24 hours.`}
                     </p>
                 </div>
@@ -328,7 +328,7 @@ export default function ContactPage() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="max-w-2xl mx-auto border dark:border-[#ededed]/10 border-[#0d0d0d]/10 rounded-2xl p-6 md:p-10 dark:bg-[#ededed]/2 bg-[#0d0d0d]/2"
+                    className="max-w-2xl mx-auto border border-[#222222] rounded-2xl p-6 md:p-10 bg-[#111111]"
                 >
                     <Suspense fallback={<div className="py-10 text-center opacity-50">Loading form...</div>}>
                         <ContactForm />
