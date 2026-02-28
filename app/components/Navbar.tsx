@@ -42,7 +42,7 @@ export default function Navbar() {
             <li key={l.label}>
                 <a
                 href={l.href}
-                className="text-[#CCCCCC] text-[13.5px] font-medium tracking-wide hover:text-white transition-colors duration-200 no-underline"
+                className="text-[#CCCCCC] text-[13.5px] font-medium tracking-[1px] hover:text-white transition-colors duration-200 no-underline"
                 >
                 {l.label}
                 </a>

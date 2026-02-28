@@ -25,26 +25,6 @@ const projects = [
         source: "https://github.com/qzseeker/cloudscale",
         concept: true,
     },
-    {
-        type: "AI Platform · Full-Stack",
-        name: "RightHome AI",
-        desc: "Real-time AI chatbot for property assistance built with Next.js, OpenAI, and Vapi.ai voice interface. Handled 500+ daily queries.",
-        result: "🎯 95% accuracy · 35% faster API response time",
-        icon: "🤖",
-        live: null,
-        source: "https://github.com/qzseeker",
-        concept: false,
-    },
-    {
-        type: "Ed-Tech · Full-Stack Platform",
-        name: "NonoMate",
-        desc: "AI-driven internship platform connecting students with verified opportunities. Built from scratch as founder — no fake offers, just real internships.",
-        result: "👥 1,000+ students onboarded on launch",
-        icon: "🎓",
-        live: null,
-        source: "https://github.com/qzseeker",
-        concept: false,
-    },
 ];
 
 export default function Work() {
@@ -69,7 +49,7 @@ export default function Work() {
             {projects.map((p, i) => (
             <Reveal key={p.name} delay={i * 0.1}>
                 <motion.div
-                className="bg-card border border-[#222222] rounded-md overflow-hidden flex flex-col"
+                className="bg-card border border-[#222222] rounded-md overflow-hidden h-full flex flex-col"
                 whileHover={{ borderColor: "#333" }}
                 transition={{ duration: 0.3 }}
                 >

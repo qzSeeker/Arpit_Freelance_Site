@@ -78,10 +78,10 @@ export default function FAQ() {
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     return (
-        <section id="faq" className="px-8 md:px-12 py-28 md:py-36 bg-black">
-        <SectionLabel text="FAQ" />
+        <section id="faq" className="px-8 md:px-12 py-28 md:py-36 bg-black grid grid-cols-1 md:grid-cols-2">
 
         <Reveal>
+        <SectionLabel text="FAQ" />
             <h2
             className="font-syne font-extrabold leading-[1.05] mb-16"
             style={{ fontSize: "clamp(32px, 4.5vw, 60px)", letterSpacing: "-0.04em" }}
