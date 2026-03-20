@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, cubicBezier } from "framer-motion";
+import Counter from "./counter";
 
 const fadeUp = {
     hidden: { opacity: 0, y: 50 },
@@ -45,15 +46,18 @@ export default function Hero() {
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            className="flex items-center gap-2 mb-8"
+            className="flex flex-col md:flex-row gap-8 items-center justify-between mb-8"
         >
-            <span
-            className="w-2 h-2 rounded-full bg-green-400 block animate-pulse_dot"
-            style={{ animation: "pulse_dot 2s ease-in-out infinite" }}
-            />
-            <span className="font-syne text-[11px] font-bold tracking-[2.5px] uppercase text-[#555555]">
-            Available for new projects — 2026
-            </span>
+            <div className="flex items-center gap-2">
+                <span
+                className="w-2 h-2 rounded-full bg-green-400 block animate-pulse_dot"
+                style={{ animation: "pulse_dot 2s ease-in-out infinite" }}
+                />
+                <span className="font-syne text-[11px] font-bold tracking-[2.5px] uppercase text-[#555555]">
+                Available for new projects — 2026
+                </span>
+            </div>
+            <Counter/>
         </motion.div>
 
         {/* Headline */}
