@@ -12,7 +12,6 @@
     "axios": "^1.13.2",
     "date-fns": "^4.1.0",
     "date-fns-tz": "^3.2.0",
-    "firebase": "^12.11.0",
     "firebase-admin": "^13.7.0",
     "framer-motion": "^12.26.1",
     "lucide-react": "^0.562.0",
@@ -37,7 +36,7 @@
     "tailwindcss": "^4.2.0",
     "typescript": "^5"
   },
-    "engines": {
+  "engines": {
     "node": "24.x"
   }
 }
